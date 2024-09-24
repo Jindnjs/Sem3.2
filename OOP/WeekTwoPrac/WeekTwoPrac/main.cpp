@@ -8,7 +8,10 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World! change3\n";
-    return 0;
+    
+    int S[2][3] = {1,2,3,4,5,6};
+    
+    std::cout << *(&S[0][0]+3*1+2) <<std::endl;
+    std::cout << (*(S+1))[2] <<std::endl;
+    
 }
