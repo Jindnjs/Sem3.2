@@ -22,9 +22,22 @@
 		ACCE86C12CA3D1D100B9505A /* OopWeek4Train */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OopWeek4Train; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ACCE86D12CA3E9A900B9505A /* Exceptions for "OopWeek4Train" folder in "OopWeek4Train" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				main.cpp,
+			);
+			target = ACCE86C02CA3D1D100B9505A /* OopWeek4Train */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ACCE86C32CA3D1D100B9505A /* OopWeek4Train */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ACCE86D12CA3E9A900B9505A /* Exceptions for "OopWeek4Train" folder in "OopWeek4Train" target */,
+			);
 			path = OopWeek4Train;
 			sourceTree = "<group>";
 		};
