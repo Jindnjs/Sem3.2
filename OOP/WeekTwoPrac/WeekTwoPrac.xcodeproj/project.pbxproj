@@ -22,9 +22,22 @@
 		AC4714672CA1C6620023B268 /* WeekTwoPrac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WeekTwoPrac; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AC7FC47D2CA317F60043ACCF /* Exceptions for "WeekTwoPrac" folder in "WeekTwoPrac" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				main.cpp,
+			);
+			target = AC4714662CA1C6620023B268 /* WeekTwoPrac */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AC4714692CA1C6620023B268 /* WeekTwoPrac */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AC7FC47D2CA317F60043ACCF /* Exceptions for "WeekTwoPrac" folder in "WeekTwoPrac" target */,
+			);
 			path = WeekTwoPrac;
 			sourceTree = "<group>";
 		};
