@@ -84,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
                 case MUL:
                     return String.valueOf(int1 * int2);
                 case DIV:
+                    if(int2 == 0){
+                        Toast.makeText(MainActivity.this, "0으로 나눌수 없습니다", Toast.LENGTH_SHORT).show();
+                        return "";
+                    }
                     return String.valueOf((double) int1 / int2); // 정수 나눗셈은 실수로 반환
                 case MOD:
                     return String.valueOf(int1 % int2);
@@ -102,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
             case MUL:
                 return String.valueOf(double1 * double2);
             case DIV:
+                if(double2 == 0){
+                    Toast.makeText(MainActivity.this, "0으로 나눌수 없습니다", Toast.LENGTH_SHORT).show();
+                    return "";
+                }
                 return String.valueOf(double1 / double2);
             case MOD:
                 return String.valueOf(double1 % double2);
