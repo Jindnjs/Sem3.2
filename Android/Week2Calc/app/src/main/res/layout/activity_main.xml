@@ -58,4 +58,12 @@
         android:layout_margin="10dp"
         android:text="나머지"
         />
+    <TextView
+        android:id="@+id/TextResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="#FF0000"
+        android:layout_margin="10dp"
+        android:text="계산 결과 : " />
 </LinearLayout>
