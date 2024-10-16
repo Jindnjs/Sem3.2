@@ -13,10 +13,20 @@
 class Circle{
 private:
     double radius;
+    int *arr;
 public:
+    //Constructor
+    Circle();
+    Circle(double);
+    Circle(const Circle &);
+    ~Circle();
+    
+    
     double getRadius() const;
     double getArea() const;
     double getPerimeter() const;
+    
+    int *getArr() const;
     
     void setRaidus(double);
 }
