@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <string>
-#include "Circle2D.hpp"
+#include "Circle2D.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -24,6 +24,9 @@ int main(int argc, const char * argv[]) {
     
     
     e.pointPrint();
+    e2.pointPrint();
+    
+    e2.setRadius(3);
     e2.pointPrint();
     //
 //    char * a = new char[10];

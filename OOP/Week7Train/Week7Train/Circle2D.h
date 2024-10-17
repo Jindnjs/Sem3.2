@@ -8,8 +8,7 @@
 #ifndef Circle2D_hpp
 #define Circle2D_hpp
 
-#include <stdio.h>
-#include "Point2D.hpp"
+#include "Point2D.h"
 
 class Circle2D{
 private:

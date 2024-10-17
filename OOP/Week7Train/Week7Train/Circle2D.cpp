@@ -5,7 +5,7 @@
 //  Created by 유진원 on 10/16/24.
 //
 
-#include "Circle2D.hpp"
+#include "Circle2D.h"
 
 #include <cmath>
 #include <string>
