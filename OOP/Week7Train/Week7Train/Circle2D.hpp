@@ -23,6 +23,8 @@ private:
     void setPermeterPoints();
     
 public:
+    void pointPrint();
+    
     //Constructor
     Circle2D(Point2D, int);
     Circle2D(const Circle2D &);
