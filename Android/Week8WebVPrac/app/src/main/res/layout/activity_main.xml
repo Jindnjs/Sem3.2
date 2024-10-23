@@ -8,34 +8,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <WebView
+        android:id="@+id/webV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/edtUrl"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:hint="url을 입력하세요" />
+
         <Button
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이동"
-            android:id="@+id/btn1"/>
+            android:text="이동" />
+
         <Button
+            android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이전"
-            android:id="@+id/btn2"/>
-
-
+            android:text="이전" />
     </LinearLayout>
 
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/webV"/>
+
 
 </LinearLayout>
