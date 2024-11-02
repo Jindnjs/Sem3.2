@@ -8,6 +8,14 @@
 #ifndef Square2D_hpp
 #define Square2D_hpp
 
-#include <stdio.h>
+#include "Point2D.h"
+#include "Rect2D.h"
+
+class Square2D : public Rect2D{
+public:
+    Square2D(Point2D,int);
+    ~Square2D();
+    const std::string get_name() const;
+};
 
 #endif /* Square2D_hpp */

@@ -18,6 +18,7 @@ public:
     virtual const std::string get_name() const = 0;
     virtual Point2D get_center() const =0;
     virtual double get_area() const =0;
+    virtual int get_num_of_points() const =0;
 };
 
 #endif /* Shape2D_h */

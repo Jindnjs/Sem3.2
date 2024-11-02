@@ -18,12 +18,15 @@ private:
     int width;
     int height;
     Point2D *perimeterPoints;
+    void calc();
 public:
     Rect2D (Point2D,int,int);
+    ~Rect2D();
     const Point2D* get_perimeter_points() const;
     const std::string get_name() const;
     Point2D get_center() const;
     double get_area() const;
+    int get_num_of_points() const;
 };
 
 

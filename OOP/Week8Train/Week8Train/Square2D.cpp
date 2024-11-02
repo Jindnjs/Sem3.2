@@ -6,3 +6,12 @@
 //
 
 #include "Square2D.h"
+
+Square2D::Square2D(Point2D center, int side) : Rect2D(center,side,side){}
+const std::string Square2D::get_name() const{
+    return "this is Square2D";
+}
+Square2D::~Square2D(){
+    
+}
+

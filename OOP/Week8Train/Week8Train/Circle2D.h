@@ -8,6 +8,12 @@
 #ifndef Circle2D_hpp
 #define Circle2D_hpp
 
-#include <stdio.h>
-
+#include "Ellipse2D.h"
+#include "Point2D.h"
+class Circle2D:public Ellipse2D{
+public:
+    Circle2D(Point2D,int);
+    ~Circle2D();
+    const std::string get_name() const;
+};
 #endif /* Circle2D_hpp */
