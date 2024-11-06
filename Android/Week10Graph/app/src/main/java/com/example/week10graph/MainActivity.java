@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.SubMenu;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -19,8 +20,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    final static int LINE = 1, CIRCLE = 2;
+    final static int LINE = 1, CIRCLE = 2, RECT = 3;
     static int curShape = LINE;
+    final static int RED = 1, GREEN = 2, BLUE = 3;
+    static int curColor = RED;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         menu.add(0,1,0,"선 그리기");
         menu.add(0,2,0,"원 그리기");
+        menu.add(0,3,0,"사각형 그리기");
+
+        SubMenu sMenu = menu.addSubMenu("색상 변경 >>");
+        sMenu.add(0,4,0,"빨강");
+        sMenu.add(0,5,0,"초록");
+        sMenu.add(0,6,0,"파랑");
+
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item){
@@ -43,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case 2:
                 curShape = CIRCLE;
+                return true;
+            case 3:
+                curShape = RECT;
+                return true;
+            case 4:
+                curColor = RED;
+                return true;
+            case 5:
+                curColor = GREEN;
+                return true;
+            case 6:
+                curColor = BLUE;
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -77,8 +99,18 @@ public class MainActivity extends AppCompatActivity {
             paint.setAntiAlias(true);
             paint.setStrokeWidth(5);
             paint.setStyle(Paint.Style.STROKE);
-            paint.setColor(Color.RED);
 
+            switch(curColor){
+                case RED:
+                    paint.setColor(Color.RED);
+                    break;
+                case GREEN:
+                    paint.setColor(Color.GREEN);
+                    break;
+                case BLUE:
+                    paint.setColor(Color.BLUE);
+                    break;
+            }
             switch (curShape){
                 case LINE:
                     canvas.drawLine(startX, startY, stopX, stopY, paint);
@@ -86,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
                 case CIRCLE:
                     int radius = (int) Math.sqrt(Math.pow(stopX-startX,2) + Math.pow(stopY - startY,2));
                     canvas.drawCircle(startX,startY,radius,paint);
+                    break;
+                case RECT:
+                    canvas.drawRect(startX, startY, stopX, stopY, paint);
                     break;
             }
         }
