@@ -44,8 +44,8 @@ public class CameraActivity extends AppCompatActivity {
     private long realStartTime = 0; // 초록색 상태에서 타이머 시작 시간
     private long lastUpdateTime = 0; // 마지막 업데이트 시간
 
-    private static final int GREEN_DURATION = 10000; // 초록색 지속 시간 (10초)
-    private static final int RED_DURATION = 5000;   // 빨간색 지속 시간 (5초)
+    private static final int GREEN_DURATION = 10000;
+    private static final int RED_DURATION = 5000;
 
     private Runnable timerRunnable = new Runnable() {
         @Override
@@ -54,23 +54,23 @@ public class CameraActivity extends AppCompatActivity {
                 long currentTime = System.currentTimeMillis();
                 long cycleTime = (currentTime - lastUpdateTime) % (GREEN_DURATION + RED_DURATION);
 
-                if (cycleTime < GREEN_DURATION) { // 초록색 상태
+                if (cycleTime < GREEN_DURATION) {
                     if (!isGreenBorder) {
                         isGreenBorder = true;
                         updateBorderColor(true);
-                        realStartTime = currentTime - realElapsedTime; // 타이머 재동기화
+                        realStartTime = currentTime - realElapsedTime;
                     }
-                    realElapsedTime = currentTime - realStartTime; // 초록색 상태에서 타이머 갱신
-                } else { // 빨간색 상태
+                    realElapsedTime = currentTime - realStartTime;
+                } else {
                     if (isGreenBorder) {
                         isGreenBorder = false;
                         updateBorderColor(false);
                     }
-                    // 빨간색 상태에서는 realElapsedTime을 유지
+
                 }
 
-                updateTimerUI(); // 타이머 UI 업데이트
-                handler.postDelayed(this, 100); // 100ms마다 호출
+                updateTimerUI();
+                handler.postDelayed(this, 100);
             }
         }
     };
@@ -118,11 +118,11 @@ public class CameraActivity extends AppCompatActivity {
                 }
                 realStartTime = System.currentTimeMillis();
                 lastUpdateTime = realStartTime;
-                realElapsedTime = 0; // 초기화
+                realElapsedTime = 0;
                 isRunning = true;
                 handler.post(timerRunnable);
                 updateBorderColor(true);
-                this.btnFinishS.setText("학습종료");// 시작 시 초록색
+                this.btnFinishS.setText("학습종료");
             }else {
                 processCameraProvider.unbindAll();
                 isRunning = false;
@@ -149,7 +149,7 @@ public class CameraActivity extends AppCompatActivity {
                 .requireLensFacing(lensFacing)
                 .build();
         Preview preview = new Preview.Builder()
-                .setTargetAspectRatio(AspectRatio.RATIO_4_3) //디폴트 표준 비율
+                .setTargetAspectRatio(AspectRatio.RATIO_4_3)
                 .build();
         preview.setSurfaceProvider(previewView.getSurfaceProvider());
 

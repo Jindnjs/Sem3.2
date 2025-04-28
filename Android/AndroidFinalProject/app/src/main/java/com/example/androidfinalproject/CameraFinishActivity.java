@@ -10,14 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Context;  // Context 사용을 위한 임포트
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager.widget.ViewPager;
+
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -40,13 +36,6 @@ public class CameraFinishActivity extends AppCompatActivity {
         pieChart = findViewById(R.id.pie_chart);
         pieChart.setUsePercentValues(true);
 
-
-//        DBHelper dbHelper = new DBHelper(context);
-//        String exampleData = "Hello, Database!";
-//        dbHelper.insertData("exampleKey", exampleData.getBytes());
-//        Log.d("DB", "Data saved successfully!");
-        //목표불러오기
-
         DBHelper dbHelper = new DBHelper(this);
         byte[] data = dbHelper.getData("1");
         String retrievedData = new String(data);
@@ -56,7 +45,6 @@ public class CameraFinishActivity extends AppCompatActivity {
 
         if (timeParts.length != 3) {
             Log.e("CameraFinishActivity", "Invalid time format: " + retrievedData);
-            // 기본값으로 설정하거나 예외 처리
             timeParts = new String[]{"0", "0", "0"};
         }
         int hours = Integer.parseInt(timeParts[0]);
@@ -64,8 +52,6 @@ public class CameraFinishActivity extends AppCompatActivity {
         int seconds = Integer.parseInt(timeParts[2]);
         int total_sec = hours * 3600 + minutes * 60 + seconds;
 
-        //학습시간 불러오기
-        //목표 나누기 학습시간
 
         Intent intent = getIntent();
         TextView text = (TextView) findViewById(R.id.timerTextView);
@@ -82,7 +68,6 @@ public class CameraFinishActivity extends AppCompatActivity {
         entries.add(new PieEntry(total_sec));
         entries.add(new PieEntry(total_sec2));
 
-        // 다양한 색상 추가
         ArrayList<Integer> colorsItems = new ArrayList<>();
         for (int c : ColorTemplate.VORDIPLOM_COLORS) colorsItems.add(c);
         for (int c : ColorTemplate.JOYFUL_COLORS) colorsItems.add(c);
